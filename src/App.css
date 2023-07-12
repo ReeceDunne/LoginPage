@@ -19,6 +19,7 @@ body {
   text-align: center;
   position: relative;
   width: 100%;
+
 }
 
 .title {
@@ -37,7 +38,7 @@ form {
 }
 
 label {
-  margin-bottom: 5px;
+  margin: 5px 0px;
   text-align: left;
 }
 
@@ -47,10 +48,10 @@ input {
   color: #ffffff;
   border: 1px solid #505196;
   border-radius: 4px;
-  margin-bottom: 10px;
+  margin: 5px 0px;
 }
 
-.input-container {
+.input-container, .error-container {
   position: relative;
 }
 
@@ -62,11 +63,10 @@ input {
 
 .input-icon {
   position: absolute;
-  top: 40%;
+  top: 50%;
   right: 10px;
   transform: translateY(-50%);
   color: #999999;
- 
 }
 
 .input-error {
@@ -74,12 +74,23 @@ input {
 }
 
 .error {
+  margin: 5px 25px;
   color: #ff0000;
-  margin-top: 5px;
   font-size: 14px;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.error-icon {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  color: #ff0000;
 }
 
 button {
+  margin-top: 5px;
   padding: 10px 20px;
   background-color: #505196;
   color: #ffffff;

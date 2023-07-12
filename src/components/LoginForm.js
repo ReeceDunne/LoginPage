@@ -4,6 +4,7 @@ import { basicSchema } from "../schemas";
 import "../App.css";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import InfoIcon from "@mui/icons-material/Info";
 
 const onSubmit = async (values, actions) => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -25,7 +26,6 @@ function LoginForm() {
     initialValues: {
       email: "",
       password: "",
-      confirmPassword: "",
     },
     validationSchema: basicSchema,
     onSubmit,
@@ -51,49 +51,39 @@ function LoginForm() {
           placeholder="Email"
         />
         {errors.email && touched.email && (
-          <p className="error">{errors.email}</p>
+          <div className="error-container">
+            <InfoIcon className="error-icon" />
+            <p className="error">{errors.email}</p>
+          </div>
         )}
         <label htmlFor="password">Create a password</label>
         <div className="input-container">
           <input
             type={showPassword ? "text" : "password"}
             id="password"
-            onChange={handleChange}
             onBlur={handleBlur}
-            value={values.password}
             className={errors.password && touched.password ? "input-error" : ""}
+            onChange={handleChange}
+            value={values.password}
             placeholder="Password"
           />
-          <div onClick={togglePasswordVisibility}>
-            {showPassword ? (
-              <VisibilityOffIcon className="input-icon" />
-            ) : (
-              <VisibilityIcon className="input-icon" />
-            )}
-          </div>
+          {!showPassword ? (
+            <VisibilityOffIcon
+              onMouseDown={togglePasswordVisibility}
+              className="input-icon"
+            />
+          ) : (
+            <VisibilityIcon
+              onMouseDown={togglePasswordVisibility}
+              className="input-icon"
+            />
+          )}
         </div>
         {errors.password && touched.password && (
-          <p className="error">{errors.password}</p>
-        )}
-        {!errors.password && touched.password && (
-          <>
-            <label htmlFor="confirmPassword">Confirm Password</label>
-            <input
-              type="password"
-              id="confirmPassword"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.confirmPassword}
-              className={
-                errors.confirmPassword && touched.confirmPassword
-                  ? "input-error"
-                  : ""
-              }
-            />
-            {errors.confirmPassword && touched.confirmPassword && (
-              <p className="error">{errors.confirmPassword}</p>
-            )}
-          </>
+          <div className="error-container">
+            <InfoIcon className="error-icon" />
+            <p className="error">{errors.password}</p>
+          </div>
         )}
         <div>
           <button type="submit" disabled={isSubmitting} onSubmit={handleSubmit}>
