@@ -41,15 +41,17 @@ function LoginForm() {
       <hr />
       <form autoComplete="off" onSubmit={handleSubmit}>
         <label htmlFor="email">What's your email address?</label>
-        <input
-          type="email"
-          id="email"
-          onChange={handleChange}
-          onBlur={handleBlur}
-          value={values.email}
-          className={errors.email && touched.email ? "input-error" : ""}
-          placeholder="Email"
-        />
+        <div className="input-container">
+          <input
+            type="email"
+            id="email"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.email}
+            className={errors.email && touched.email ? "input-error" : ""}
+            placeholder="Email"
+          />
+        </div>
         {errors.email && touched.email && (
           <div className="error-container">
             <InfoIcon className="error-icon" />

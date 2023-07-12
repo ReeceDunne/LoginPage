@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
 html, body {
   height: 100%;
   margin: 0;
@@ -10,7 +12,7 @@ body {
   justify-content: center;
   background-color: #343434;
   color: #ffffff;
-  font-family: Arial, sans-serif;
+  font-family: "Roboto" ,Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -19,12 +21,12 @@ body {
   text-align: center;
   position: relative;
   width: 100%;
-
 }
 
 .title {
   text-align: center;
   white-space: nowrap;
+  font-weight: 700;
 }
 
 hr {
@@ -36,10 +38,16 @@ form {
   display: flex;
   flex-direction: column;
 }
+::placeholder {
+  font-weight: 500;
+  font-size: 14px;
+}
 
 label {
   margin: 5px 0px;
   text-align: left;
+  font-weight: 500;
+  font-size: 16px;
 }
 
 input {
@@ -49,6 +57,7 @@ input {
   border: 1px solid #505196;
   border-radius: 4px;
   margin: 5px 0px;
+  font-size: 16px;
 }
 
 .input-container, .error-container {
@@ -79,6 +88,7 @@ input {
   font-size: 14px;
   text-align: left;
   text-transform: capitalize;
+  font-weight: 500;
 }
 
 .error-icon {
@@ -99,12 +109,12 @@ button {
   cursor: pointer;
   font-size: 16px;
   width: 100%;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 button:hover {
   background-color: #3c3a75;
-  font-weight: bolder;
+  font-weight: 900;
 }
 
 button:disabled {
