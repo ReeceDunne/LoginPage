@@ -1,4 +1,113 @@
-.App {
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
   display: flex;
+  align-items: center;
   justify-content: center;
+  background-color: #343434;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 400px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  width: 100%;
+
+}
+
+.title {
+  text-align: center;
+  white-space: nowrap;
+}
+
+hr {
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 5px 0px;
+  text-align: left;
+}
+
+input {
+  padding: 12px 8px;
+  background-color: #444444;
+  color: #ffffff;
+  border: 1px solid #505196;
+  border-radius: 4px;
+  margin: 5px 0px;
+}
+
+.input-container, .error-container {
+  position: relative;
+}
+
+.input-container input {
+  padding-right: 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #999999;
+}
+
+.input-error {
+  border-color: #ff0000;
+}
+
+.error {
+  margin: 5px 25px;
+  color: #ff0000;
+  font-size: 14px;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.error-icon {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  color: #ff0000;
+}
+
+button {
+  margin-top: 5px;
+  padding: 10px 20px;
+  background-color: #505196;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #3c3a75;
+  font-weight: bolder;
+}
+
+button:disabled {
+  background-color: #aaaaaa;
+  cursor: not-allowed;
 }
